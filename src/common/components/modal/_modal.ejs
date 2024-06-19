@@ -1,0 +1,37 @@
+<%include('/_utils');
+const params = ejsUtils.defaultParamsMapper(locals, {
+  title:'',
+  imagePath:'',
+  imagePathPC:'',
+  imagePathSP:'',
+  alt:'',
+  captionColor:'',
+  captionPosition:'noCap',
+  pictureMode:'',
+  sai:'',
+  modifiers: []
+});
+const className = ejsUtils.mapModifiers('modal', params.modifiers);
+%>
+<div class="<%- className %>">
+  <div class="modal__btn js-modal">
+    <%- params.title %>
+  </div>
+  <div class="modalItem js-modal-item">
+    <div class="modalContent">
+      <div class="modalContent__close js-modal-close"></div>
+      <div class="modalContent__inner">
+        <%- include('../photo/_photo.ejs', {
+          imagePath: params.imagePath,
+          alt: params.alt,
+          captionColor: params.captionColor,
+          captionPosition: params.captionPosition,
+          pictureMode: params.pictureMode,
+          sai: params.sai,
+          modifiers: []
+        }) %>
+      </div>
+    </div>
+    <div class="modalItem__bg js-modal-close"></div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<%include('/_utils');
+const params = ejsUtils.defaultParamsMapper(locals, {
+  title:'',
+  movieID:'',
+  modifiers: []
+});
+const className = ejsUtils.mapModifiers('movieModal', params.modifiers);
+%>
+<div class="<%- className %>" data-yt-id="<%- params.movieID %>">
+    <div class="movieModal__btn js-movie-btn">
+      <%- params.title %>
+    </div>
+    <div class="modalItem">
+      <div class="modalContent">
+        <div class="modalContent__close js-movie-modal-close"></div>
+          <div class="modalContent__inner">
+            <div class="movieFrame js-movie-frame"></div>
+          </div>
+      </div>
+      <div class="modalItem__bg js-movie-modal-close"></div>
+    </div>
+</div>

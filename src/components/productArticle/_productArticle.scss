@@ -1,0 +1,208 @@
+.productArticle {
+  background-color: #ffffff;
+  counter-increment: productOrder;
+
+  @include pc {
+    border-radius: 20px;
+    width: 100%;
+  }
+
+  @include sp {
+    border-radius: 40px;
+    margin: 0 calc(50% - 50vw);
+    width: 100vw;
+  }
+
+  &__head {
+    align-items: center;
+    background: #2969b1;
+    background: url('../imgs/bg-article.jpg') repeat-y;
+    background-size: cover;
+    color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    height: 160px;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    @include pc {
+      border-radius: 20px 20px 0 0;
+    }
+
+    @include sp {
+      border-radius: 40px 40px 0 0;
+    }
+
+    &:before {
+      align-items: center;
+      background: #2969b1;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      content: '0' counter(productOrder);
+      display: flex;
+      font-family: $font-en;
+      font-size: 18px;
+      font-weight: 700;
+      height: 56px;
+      justify-content: center;
+      left: 50%;
+      line-height: 1;
+      position: absolute;
+      top: 0;
+      transform: translate(-50%,-50%);
+      width: 56px;
+    }
+  }
+
+  &__heading {
+    font-size: 26px;
+    font-weight: 700;
+    justify-content: center;
+    letter-spacing: .05em;
+    position: relative;
+
+    @include lhCrop(32 / 26);
+
+    .heading__icon {
+      width: 50px;
+
+      @include pc {
+        bottom: -30%;
+        left: -70px;
+        position: absolute;
+      }
+
+      @include sp {
+        display: inline-block;
+        padding-bottom: 15px;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &__leading {
+    align-items: flex-end;
+    color: #ffffff;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    letter-spacing: .05em;
+    line-height: 1;
+    text-align: center;
+
+    @include pc {
+      font-size: 16px;
+    }
+
+    span {
+      @include pc {
+        margin: 0 21px;
+      }
+    }
+  }
+
+  &__cont {
+    @include pc {
+      padding: 56px 90px;
+    }
+
+    @include sp {
+      padding: 40px 20px;
+    }
+  }
+
+  &__bottom {
+    align-items: center;
+    background: #2969b1;
+    background: url('../imgs/bg-article.jpg') repeat-y;
+    background-size: contain;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    @include pc {
+      border-radius: 0 0 20px 20px;
+      padding: 60px 15px;
+    }
+
+    @include sp {
+      border-radius: 0 0 40px 40px;
+      padding: 40px 15px;
+    }
+
+  }
+
+  .relationBox {
+
+    &__heading {
+    }
+  }
+
+  .conversation {
+
+    &__balloon {
+      background-color: #e9f0f7;
+    }
+
+    &__person--man {
+
+      .conversation__balloon:after {
+        border-color: transparent #e9f0f7 transparent transparent;
+      }
+    }
+
+    &__icon {
+    }
+
+    &__person--woman {
+
+      .conversation__balloon:after {
+        border-color: transparent transparent transparent #e9f0f7;
+      }
+    }
+  }
+
+  & + .productArticle {
+    @include pc {
+      margin-top: 110px;
+    }
+
+    @include sp {
+      margin-top: 80px;
+    }
+
+  }
+
+  .contentsTable + & {
+    @include pc {
+      margin-top: 100px;
+    }
+
+    @include sp {
+      margin-top: 50px;
+    }
+  }
+
+  .photo__cap {
+    margin-top: 10px;
+
+    @include sp {
+      margin-top: 5px;
+    }
+  }
+}
+
+#ancArticle03 {
+  .subGeneralSect {
+    @include sp {
+      margin-bottom: 80px;
+    }
+  }
+}

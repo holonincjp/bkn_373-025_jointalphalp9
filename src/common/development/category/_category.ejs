@@ -1,0 +1,18 @@
+<%include('/_utils');
+const params = ejsUtils.defaultParamsMapper(locals, {
+  ttl: '',
+  txt: '',
+  modifiers: []
+});
+const className = ejsUtils.mapModifiers('category', params.modifiers);
+
+%>
+
+<div class="<%- className %>">
+  <div class="category__head">
+    <div class="category__ttl"><%- params.ttl %></div>
+  </div>
+  <div class="category__content">
+    <p class="category__txt"><%- params.txt %></p>
+  </div>
+</div>

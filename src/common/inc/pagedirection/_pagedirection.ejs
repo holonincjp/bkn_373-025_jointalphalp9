@@ -1,0 +1,17 @@
+<%
+include('/_utils');
+
+const params = ejsUtils.defaultParamsMapper(locals, {
+  prevDir: '{$previous_url$}',
+  prevTitle: '前ページ',
+  nextDir: '{$next_url$}',
+  nextTitle: '次ページ',
+});
+
+%>
+<div class="pageDirection">
+  <div class="pageDirection__inner">
+    <a href="<%- params.prevDir %>" class="pageDirection__link pageDirection__link--previous"><%- params.prevTitle %></a>
+    <a href="<%- params.nextDir %>" class="pageDirection__link pageDirection__link--next"><%- params.nextTitle %></a>
+  </div>
+</div>

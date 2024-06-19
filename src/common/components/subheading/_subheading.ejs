@@ -1,0 +1,1 @@
+<% include('/_utils'); const params = ejsUtils.defaultParamsMapper(locals, { heading: '',parentBlock: '' }); %><h3 class="subheading <% if (params.parentBlock !== '') { %><%- params.parentBlock %>__heading<% } %>"><%- params.heading %></h3>

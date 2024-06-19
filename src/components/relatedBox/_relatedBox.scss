@@ -1,0 +1,60 @@
+.relatedBox {
+  border: 6px solid #96b4d6;
+  border-radius: 20px;
+  color: #2969b1;
+  position: relative;
+
+  @include pc {
+    padding: 55px 40px;
+  }
+
+  @include sp {
+    padding: 55px 24px;
+  }
+
+  &__icon {
+    left: 40px;
+    position: absolute;
+    top: 0;
+    transform: translate(0,-30px);
+    width: 60px;
+  }
+
+  &__heading {
+    font-family: 'Noto Sans JP';
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+
+    @include lhCrop(28/165);
+
+    & + .txt {
+      margin-top: 40px;
+    }
+  }
+
+  .txt {
+    color: #2969b1;
+  }
+
+  .txt + &,
+  .photo + & {
+    @include pc {
+      margin-top: 56px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+  }
+
+  .conversation + & {
+    @include pc {
+      margin-top: 56px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.txt {
+  color: #333333;
+  font-size: 16px;
+
+  @include lhCrop(2);
+
+  .strong {
+    font-weight: 700;
+  }
+
+  .underline {
+    background: linear-gradient(transparent 70%, #f4e67d 0%);
+  }
+
+  .heading + & {
+    @include pc {
+      margin-top: 56px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+  }
+
+  .subheading + & {
+    @include pc {
+      margin-top: 32px;
+    }
+
+    @include sp {
+      margin-top: 16px;
+    }
+  }
+
+  .photo + & {
+    @include pc {
+      margin-top: 80px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+  }
+
+  .conversation + & ,
+  .relatedBox + & {
+    @include pc {
+      margin-top: 56px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+  }
+}

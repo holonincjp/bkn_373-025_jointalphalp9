@@ -1,0 +1,16 @@
+<%include('/_utils');
+const params = ejsUtils.defaultParamsMapper(locals, {
+  list: [],
+  modifiers: []
+});
+const className = ejsUtils.mapModifiers('tab', params.modifiers);
+%>
+<div class="<%- className %>">
+<% list.forEach(function (value, key) { %>
+  <div class="tab__item js-tab<% if (key =='0') { %> is-active<% } %>"><%- value.name %>
+    <svg class="arrowSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10px" height="6px" viewBox="0,0,10,6">
+      <polyline class="arrowSVG__path" points="0 0 10 0 5 6 0 0"/>
+    </svg>
+  </div>
+<% }); %>
+</div>

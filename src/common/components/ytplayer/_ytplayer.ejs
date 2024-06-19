@@ -1,0 +1,30 @@
+<%include('/_utils');
+const params = ejsUtils.defaultParamsMapper(locals, {
+  youtubeID: '',
+  width: '',
+  height: '',
+  autoplay: '',  // 自動再生するかどうか（T/F)
+  controls: '',  // コントロールバーを表示するかどうか（T/F)
+  fs: '',        // 全画面表示ボタンを表示するかどうか（T/F)
+  loop: '',      // ループさせるかどうか（T/F)
+  rel: '',       // 動画再生後にプレーヤーに関連動画を表示するかどうか（T/F)
+  modifiers: []
+});
+const className = ejsUtils.mapModifiers('ytPlayerArea', params.modifiers);
+
+let ytWidth ,ytHeight;
+
+ytWidth = isNaN(params.width) ? 1260 : params.width;
+ytHeight = isNaN(params.height) ? 708.75 : params.height;
+
+if (params.width === '') {
+  ytWidth = 1260;
+}
+if (params.height === ''){
+  ytHeight = 708.75;
+}
+
+%>
+<div class="<%- className %> js-yt-player" data-yt-id="<%- params.youtubeID %>" data-yt-width="<%- ytWidth %>" data-yt-height="<%- ytHeight %>" data-yt-autoplay="<%- params.autoplay %>" data-yt-controls="<%- params.controls %>" data-yt-fs="<%- params.fs %>" data-yt-loop="<%- params.loop %>" data-yt-rel="<%- params.rel %>">
+  <div class="ytPlayerFrame js-yt-frame"></div>
+</div>

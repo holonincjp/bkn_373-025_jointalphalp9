@@ -1,0 +1,27 @@
+<%include('/_utils');
+const params = ejsUtils.defaultParamsMapper(locals, {
+  sliderList: [],
+  modifiers: []
+});
+const className = ejsUtils.mapModifiers('slider', params.modifiers);
+%>
+<div class="<%- className %> swiper-container js-slider">
+  <div class="swiper-wrapper">
+  <% sliderList.forEach(function (value, key) { %>
+    <div class="slider__item swiper-slide">
+      <%- include('/common/components/photo/_photo.ejs', {
+        imagePath: value.imagePath,
+        imagePathPC: value.imagePathPC,
+        imagePathSP: value.imagePathSP,
+        alt: value.alt,
+        captionColor: value.captionColor,
+        captionPosition: value.captionPosition,
+        lazy: value.lazy,
+        pictureMode: value.pictureMode,
+        modifiers: []
+      }) %>
+    </div>
+  <% }); %>
+  <div class="swiper-pagination"></div>
+  </div>
+</div>

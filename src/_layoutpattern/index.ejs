@@ -1,0 +1,221 @@
+<% var pageData = {
+		pageDir: 'layoutPattern',
+    topCVStatus: 'new'
+	};
+%>
+<%- include('/_head', {
+  pageId: pageData.pageDir,
+  title: 'indexのタイトル',
+  ogType: 'article',
+  vendorScript: false
+  }) %>
+<main class="main">
+  <div class="container">
+    <div class="contentArea">
+
+      <%- include('/common/development/category/_category.ejs', {
+        ttl: 'Atoms',
+        txt: 'ダミーテキストです。正式な説明は追って記述します。Atoms（原子）は、UI を構成する基礎的な要素が該当します。<br>フォームでいうと、画像で示すようにラベル・入力部分・ボタンの各要素が Atoms となります。<br>他の要素では、カラーパレットやフォント、アニメーションが Atoms に入ります。'
+      }) %>
+
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'txt',
+          txt: 'テキストコンポーネント',
+          componentPath: '/common/components/txt/_txt.ejs',
+          code: [
+            {property: "txt: 'ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト'"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/txt/_txt.ejs', {
+            txt: 'ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト',
+          }) %>
+        </div>
+      </div>
+
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'photo',
+          txt: '注釈付き画像コンポーネント',
+          componentPath: '/common/components/photo/_photo.ejs',
+          code: [
+            {property: "imagePathPC:''"},
+            {property: "imagePathSP:''"},
+            {property: "imagePath:''"},
+            {property: "alt:''"},
+            {property: "captionColor:'sdw-wh'"},
+            {property: "captionPosition:'capIn'"},
+            {property: "pictureMode:''"},
+            {property: "sai:''"},
+            {property: "lazy:'on'"},
+            {property: "modifiers: []"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/photo/_photo.ejs', {
+            imagePath: '<img src="./imgs/img-dummy-01.jpg" alt="" width="985" height="554">',
+            alt: 'ダミーテキスト',
+          }) %>
+        </div>
+      </div>
+
+      <div class="componentBlock">
+        <%# include('/common/development/manual/_manual.ejs', {
+          ttl: 'btn',
+          txt: 'ダミー',
+          componentPath: '/common/components/btn/_btn.ejs',
+          code: ''
+        }) %>
+        <div class="demonstrateArea">
+          <%# include('/common/components/btn/_btn.ejs', {
+            txt: 'ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト',
+            alt: '',
+          }) %>
+        </div>
+      </div>
+      <%# 以下複製してコンポーネント追加してください %>
+
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'accrbox',
+          txt: 'ダミー',
+          componentPath: '/common/components/accrbox/_accrbox.ejs',
+          code: [
+            {property: "txt: 'ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト'"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/accrbox/_accrbox.ejs', {
+            txt: 'ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト',
+            alt: '',
+          }) %>
+        </div>
+      </div>
+      <%# 以下複製してコンポーネント追加してください %>
+
+
+
+
+
+
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+            ttl: 'heading',
+            txt: 'ヘッディングコンポーネント',
+            componentPath: '/common/components/heading/_heading.ejs',
+            code: [
+              {property: "heading: 'ダミーテキストダミーテキスト'"},
+              {property: "parentBlock: ''"},
+            ]
+          }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/heading/_heading.ejs', {
+            heading: 'ダミーテキストダミーテキスト',
+            modifiers: []
+          }) %>
+        </div>
+      </div>
+
+      <div class="componentBlock">
+        <%# include('/common/development/manual/_manual.ejs', {
+            ttl: 'btnsvg',
+            txt: 'ボタンアイコンコンポーネント',
+            componentPath: '/common/components/btnsvg/_btnsvg.ejs'
+          }) %>
+        <div class="demonstrateArea">
+          <%# include('/common/components/btnsvg/_btnsvg.ejs', {
+            iconImgPath: '<img src="./imgs/icn-dummy-01.svg" alt="" >',
+            alt: 'ダミーテキスト',
+          }) %>
+        </div>
+      </div>
+
+      <div class="componentBlock">
+        <%# include('/common/development/manual/_manual.ejs', {
+            ttl: 'arrowsvg',
+            txt: '矢印アイコンコンポーネント',
+            componentPath: '/common/components/arrowsvg/_arrowsvg.ejs'
+          }) %>
+        <div class="demonstrateArea">
+          <%# include('/common/components/arrowsvg/_arrowsvg.ejs', {
+            iconImgPath: '<img src="./imgs/icn-dummy-01.svg" alt="" >',
+            alt: 'ダミーテキスト',
+          }) %>
+        </div>
+      </div>
+
+
+
+      <%- include('/common/development/category/_category.ejs', {
+        ttl: 'Molucules',
+        txt: 'ダミーテキストです。正式な説明は追って記述します。Molecules（分子）は、Atoms を組み合わせて作る要素です。<br>この Atoms を組み合わせて Molecules を作るというのは「単一責任の原則」や UNIX 哲学の「1 つのプログラムは 1 つのことをうまくやる」に基づいているようです。'
+      }) %>
+
+
+
+      <div class="componentBlock">
+        <%# include('/common/development/manual/_manual.ejs', {
+            ttl: 'generalsect',
+            txt: 'heading + txt のグループ',
+            componentPath: '/common/components/generalsect/_generalsect.ejs'
+          }) %>
+        <div class="demonstrateArea">
+          <%# include('/common/components/generalsect/_generalsect.ejs', {
+            heading: 'ダミーテキストダミーテキスト',
+            txt: 'ダミーテキストダミーテキスト',
+          }) %>
+        </div>
+      </div>
+
+      <div class="componentBlock">
+        <%# include('/common/development/manual/_manual.ejs', {
+            ttl: 'columnbox',
+            txt: 'コラムボックス',
+            componentPath: '/common/components/columnbox/_columnbox.ejs'
+          }) %>
+        <div class="demonstrateArea">
+          <%# include('/common/components/columnbox/_columnbox.ejs', {
+            backgroundImagePath: './imgs/bg-dummy-01.jpg',
+            txt: 'ダミーテキストダミーテキスト',
+            imagePath: '<img src="./imgs/img-dummy-01.jpg" alt="" width="985" height="554">',
+          }) %>
+        </div>
+      </div>
+
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'photolist',
+          txt: '注釈付き画像コンポーネント',
+          componentPath: '/common/components/photolist/_photolist.ejs',
+          code: [
+            {property: "list: ["},
+            {property: "{imagePath: '', imageAlt: '', number: ''}"},
+            {property: "{imagePath: '', imageAlt: '', number: ''}"},
+            {property: "{imagePath: '', imageAlt: '', number: ''}"},
+            {property: "{imagePath: '', imageAlt: '', number: ''}"},
+            {property: "],"},
+            {property: "modifiers: []"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/photolist/_photolist.ejs', {
+            list: [
+              {imagePath: 'img-dummy-03.jpg', imageAlt: '', number: '1'},
+              {imagePath: 'img-dummy-03.jpg', imageAlt: '', number: '2'},
+              {imagePath: 'img-dummy-03.jpg', imageAlt: '', number: '3'},
+              {imagePath: 'img-dummy-03.jpg', imageAlt: '', number: '4'},
+            ],
+            modifiers: []
+          }) %>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</main>
+<%- include('/common/inc/footer/_footer.ejs', {pageId: pageData.pageDir, footerCap: ''}) %>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.componentBlock {
+    margin: 0 auto;
+
+    & + .componentBlock,
+    & + .category {
+        margin-top: 150px;
+    }
+
+}

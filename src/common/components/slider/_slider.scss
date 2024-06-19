@@ -1,0 +1,18 @@
+.slider {
+
+  .swiper-pagination {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .swiper-pagination-bullet {
+      background: #ffffff;
+      margin: 0 10px;
+      opacity: 1;
+
+      &.swiper-pagination-bullet-active {
+        background: #e02424;
+      }
+    }
+  }
+}

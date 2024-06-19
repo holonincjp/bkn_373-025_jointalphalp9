@@ -1,0 +1,132 @@
+.recruitmentOutline {
+  align-items: center;
+  background: #ffffff;
+  border: 4px solid #f89e48;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+
+  @include pc {
+    padding: 45px 0 60px;
+    width: 822px;
+  }
+
+  @include sp {
+    padding: 40px 32px;
+  }
+
+
+  &__head {
+
+    & + .recruitmentOutline__cont {
+      margin-top: 30px;
+    }
+  }
+
+  &__heading {
+    color: #f89e48;
+    font-weight: bold;
+    text-align: center;
+
+    @include pc {
+      font-size: 18px;
+
+      @include lhCrop(32/18);
+    }
+
+    span {
+      margin: 0 12px;
+    }
+  }
+
+  &__cont {
+    margin: 0 auto;
+
+    @include pc {
+      width: 660px;
+    }
+
+    @include sp {
+      width: 100%;
+    }
+  }
+
+  &__detail {
+    align-items: flex-start;
+    border-bottom: 2px dotted #fae4cd;
+    display: flex;
+    font-size: 16px;
+    justify-content: flex-start;
+    padding: 6px 0;
+    position: relative;
+
+    @include lhCrop(2);
+  }
+
+  &__term {
+    color: #333333;
+    font-weight: bold;
+    text-align: left;
+
+    @include pc {
+      padding-left: 15px;
+      width: 180px;
+    }
+
+    @include sp {
+      padding-left: 10px;
+      width: 110px;
+    }
+
+
+    &:before {
+      background-color: #f89e48;
+      content: '';
+      height: 16px;
+      left: 0;
+      position: absolute;
+      width: 4px;
+
+      @include pc {
+        top: 50%;
+        transform: translate(0,-50%);
+      }
+
+      @include sp {
+        top: 14px;
+      }
+    }
+
+    &:after {
+      content: '：';
+    }
+  }
+
+  &__detail.tall {
+    .recruitmentOutline__term::before {
+      @include pc {
+      top: 37%;
+      }
+    } 
+  }
+
+  &__desc {
+    color: #333333;
+    font-weight: normal;
+    text-align: left;
+
+
+  }
+
+  .mainVisual + & {
+    @include pc {
+      margin-top: 120px;
+    }
+
+    @include sp {
+      margin-top: 126px;
+    }
+  }
+}

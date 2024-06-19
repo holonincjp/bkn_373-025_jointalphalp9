@@ -1,0 +1,130 @@
+.movieModal {
+
+  &__btn {
+    background: #000000;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 20px 0;
+    text-align: center;
+  }
+}
+
+.modalItem {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: .9s;
+  visibility: hidden;
+  width: 100vw;
+  z-index: 99999;
+
+  @include ease-customize-01;
+
+  &__bg {
+    background: rgba(0, 0, 0, .8);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .modalContent {
+    position: relative;
+
+    @include max-screen($breakP) {
+      width: 100%;
+    }
+
+    &__inner {
+      overflow: scroll;
+      position: relative;
+      z-index: 9;
+
+      @include max-screen($breakP) {
+        width: 100%;
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &__close {
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      z-index: 1;
+
+      @include min-screen($breakP) {
+        bottom: calc(100% + 20px);
+        height: 30px;
+        width: 50px;
+      }
+
+      @include max-screen($breakP) {
+        bottom: calc(100% + 10px);
+        height: 15px;
+        width: 25px;
+
+        @media screen and (orientation:landscape) {
+          bottom: 100%;
+        }
+      }
+
+      &:before,
+      &:after {
+        background-color: #ffffff;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 110%;
+
+        @include max-screen($breakP) {
+          height: 1px;
+        }
+      }
+
+      &:before {
+        top: 0;
+        transform: rotate(30.6deg);
+        transform-origin: top left;
+      }
+
+      &:after {
+        bottom: 0;
+        transform: rotate(-30.6deg);
+        transform-origin: bottom left;
+      }
+    }
+  }
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .movieFrame {
+    @media only screen and (max-width:1200px) {
+      height: calc(708.75vw / 1200 * 100);
+      width: 100vw;
+    }
+
+    @include max-screen($breakP) {
+      height: 169px;
+      width: 100%;
+    }
+
+    &--pcPlayer {
+      @include max-screen($breakP) {
+        display: none;
+      }
+    }
+  }
+}

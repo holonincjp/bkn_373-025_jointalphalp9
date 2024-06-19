@@ -1,0 +1,25 @@
+.photolist {
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    position: relative;
+    width: 24%;
+  }
+
+  &__number {
+    align-items: center;
+    background-color: #999999;
+    color: #ffffff;
+    display: flex;
+    font-size: 12px;
+    height: 20px;
+    justify-content: center;
+    left: 0;
+    letter-spacing: 0;
+    line-height: .85;
+    position: absolute;
+    top: 0;
+    width: 20px;
+  }
+}

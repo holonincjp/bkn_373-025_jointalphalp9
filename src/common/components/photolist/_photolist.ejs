@@ -1,0 +1,23 @@
+<%include('/_utils');
+const params = ejsUtils.defaultParamsMapper(locals, {
+  list: [],
+  modifiers: []
+});
+const className = ejsUtils.mapModifiers('photolist', params.modifiers);
+%>
+
+<ul class="<%- className %>">
+  <% list.forEach(function (value, key) { %>
+  <li class="photolist__item">
+    <%- include('/common/components/photo/_photo.ejs', {
+      imagePath: '<img src="./imgs/' + value.imagePath + '"',
+      alt: value.imageAlt,
+      captionColor:'white',
+      captionPosition: 'capIn',
+      lazy:'off',
+      modifiers: []
+    }) %>
+    <span class="photolist__number"><%- value.number %></span>
+  </li>
+  <% }); %>
+</ul>

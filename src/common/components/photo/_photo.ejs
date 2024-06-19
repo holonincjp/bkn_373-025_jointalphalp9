@@ -1,0 +1,54 @@
+<%include('/_utils');
+const params = ejsUtils.defaultParamsMapper(locals, {
+  imagePathPC:'',
+  imagePathSP:'',
+  imagePath:'',
+  alt:'',
+  captionColor:'sdw-wh',
+  captionPosition:'capIn',
+  pictureMode:'',
+  sai:'',
+  lazy:'on',
+  modifiers: []
+});
+const className = ejsUtils.mapModifiers('photo', params.modifiers);
+
+const baseImgPC = params.imagePathPC;
+const baseImgSP = params.imagePathSP;
+const baseImg = params.imagePath;
+
+function photoFunc(photoSrc) {
+  let baseSrc = photoSrc.split(/(src=)["|'](.*?)["|']+/g);
+  let baseWidth = photoSrc.split(/(width=)["|'](.*?)["|']+/g);
+  let baseHeight = photoSrc.split(/(height=)["|'](.*?)["|']+/g);
+
+  if (photoSrc == params.imagePathPC) {
+    pureSrcPC = baseSrc[2];
+    pureWidthPC = baseWidth[2];
+    pureHeightPC = baseHeight[2];
+  } else if (photoSrc == params.imagePathSP) {
+    pureSrcSP = baseSrc[2];
+    pureWidthSP = baseWidth[2];
+    pureHeightSP = baseHeight[2];
+  } else {
+    pureSrc = baseSrc[2];
+    pureWidth = baseWidth[2];
+    pureHeight = baseHeight[2];
+  }
+}
+
+photoFunc(baseImgPC);
+photoFunc(baseImgSP);
+photoFunc(baseImg);
+
+const photoAlt = alt.replace(/<br.*?>|<span.*?>|<\u002fspan>|<sup.*?>(.*?)<\u002fsup>/g, "");
+
+%>
+<div class="<%- className %>"<% if (params.sai !== '') { %> data-sai="<%- params.sai %>"<% } %>><% if (params.pictureMode !== '') { %>
+  <picture class="photo__pic">
+      <source media="(min-width: 768px)" <% if (params.lazy == 'on') { %>data-<% } %>srcset="<%- pureSrcPC %>" width="<%- pureWidthPC %>" height="<%- pureHeightPC %>">
+      <% if (params.lazy == 'on') { %><img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7" data-src="<%- pureSrcSP %>" alt="<%- photoAlt %>"  width="<%- pureWidthSP %>" height="<%- pureHeightSP %>" class="photo__image lazyload"><% } else { %><img src="<%- pureSrcSP %>" alt="<%- photoAlt %>" width="<%- pureWidthSP %>" height="<%- pureHeightSP %>" class="photo__image"><% } %>
+  </picture>
+  <% } else { %><% if (params.lazy == 'on') { %><img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7" data-src="<%- pureSrc %>" alt="<%- photoAlt %>" width="<%- pureWidth %>" height="<%- pureHeight %>" class="photo__image lazyload"><% } else { %><img src="<%- pureSrc %>" alt="<%- photoAlt %>" width="<%- pureWidth %>" height="<%- pureHeight %>" class="photo__image"><% } %><% } %>
+  <% if (params.captionPosition !== 'noCap') { %><p class="photo__<%- params.captionPosition %> <%- params.captionPosition %>" data-color="<%- params.captionColor %>"><%- params.alt %></p><% } %>
+</div>

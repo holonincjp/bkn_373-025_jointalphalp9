@@ -1,0 +1,15 @@
+.ytPlayerArea {
+  width: 100%;
+
+  &--noTouch{
+    pointer-events: none;
+  }
+}
+
+.ytPlayerFrame {
+  width: 100%;
+
+  @include max-screen($breakP) {
+    height: 166px;
+  }
+}

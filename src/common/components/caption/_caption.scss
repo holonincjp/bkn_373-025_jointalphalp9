@@ -1,0 +1,22 @@
+.caption {
+
+  .txt + & {
+    @include pc {
+      margin-top: 32px;
+    }
+
+    @include sp {
+      margin-top: 16px;
+    }
+  }
+
+  .conversation + & {
+    @include pc {
+      margin-top: 56px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+  }
+}

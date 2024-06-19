@@ -1,0 +1,425 @@
+<% var pageData = {
+		pageDir: 'interactionPattern',
+    topCVStatus: 'new'
+	};
+%>
+<%- include('/_head', {
+  pageId: pageData.pageDir,
+  title: 'indexのタイトル',
+  ogType: 'article',
+  vendorScript: false
+  }) %>
+<main class="main">
+  <div class="container">
+    <div class="contentArea">
+
+      <%- include('/common/development/category/_category.ejs', {
+        ttl: 'Atoms',
+        txt: 'ダミーテキストです。正式な説明は追って記述します。Atoms（原子）は、UI を構成する基礎的な要素が該当します。<br>フォームでいうと、画像で示すようにラベル・入力部分・ボタンの各要素が Atoms となります。<br>他の要素では、カラーパレットやフォント、アニメーションが Atoms に入ります。'
+      }) %>
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'touchfigure',
+          txt: 'SP時ピンチアウト',
+          componentPath: '/common/components/touchfigure/_touchfigure.ejs',
+          code: [
+            {property: "imagePath:'./imgs/〇〇〇〇.jpg'"},
+            {property: "alt:''"},
+            {property: "captionColor:''"},
+            {property: "figPosition: 'left'"},
+            {property: "modifiers: ['zoom']"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/touchfigure/_touchfigure.ejs', {
+            imagePath:'./imgs/img-map-01@1.5x.jpg',
+            alt:'zoom',
+            captionColor:'',
+            figPosition: 'left',
+            modifiers: ['zoom']
+          }) %>
+          <%- include('/common/components/touchfigure/_touchfigure.ejs', {
+            imagePath:'./imgs/img-map-01@1.5x.jpg',
+            alt:'move',
+            captionColor:'',
+            figPosition: 'left',
+            modifiers: ['move']
+          }) %>
+          <%- include('/common/components/touchfigure/_touchfigure.ejs', {
+            imagePath:'./imgs/img-map-01@1.5x.jpg',
+            alt:'swipe',
+            captionColor:'',
+            figPosition: 'left',
+            modifiers: ['swipe']
+          }) %>
+        </div>
+      </div>
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'accrbox',
+          txt: 'SP時アコーディオン',
+          componentPath: '/common/components/accrbox/_accrbox.ejs',
+          code: [
+          {property: "txt: 'ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト'"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/accrbox/_accrbox.ejs', {
+            txt: 'ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト',
+          }) %>
+        </div>
+      </div>
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'movie',
+          txt: '動画埋め込み（Youtube）',
+          componentPath: '/common/components/ytplayer/_ytplayer.ejs',
+          code: [
+          {property: "youtubeID: 'ynccI1WB300'"},
+          {property: "width: '1000'"},
+          {property: "height: '564'"},
+          {property: "autoplay: 'true'"},
+          {property: "controls: 'false'"},
+          {property: "fs: 'false'"},
+          {property: "loop: 'true'"},
+          {property: "rel: 'false'"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/ytplayer/_ytplayer.ejs', {
+            youtubeID: 'ynccI1WB300',
+            width: '1000',
+            height: '564',
+            autoplay: 'true',
+            controls: 'false',
+            fs: 'false',
+            loop: 'true',
+            rel: 'false',
+            modifiers: ['noTouch']
+          }) %>
+        </div>
+      </div>
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'modal',
+          txt: 'モーダル',
+          componentPath: '/common/components/modal/_modal.ejs',
+          code: [
+          {property: "title: 'モーダル起動'"},
+          {property: "inner: 'ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト'"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/modal/_modal.ejs', {
+            title: 'モーダル起動',
+            imagePath:'<img src="./imgs/img-dummy-01.jpg" alt="" width="985" height="554">',
+            alt:'キャプション<br>キャプション',
+            captionColor:'sdw-wh',
+            captionPosition:'capIn',
+            pictureMode:'',
+            sai:'',
+            modifiers: []
+          }) %>
+        </div>
+      </div>
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'modal（ + movie ）',
+          txt: '動画モーダル',
+          componentPath: '/common/components/moviemodal/_moviemodal.ejs',
+          code: [
+          {property: "title: 'モーダル起動'"},
+          {property: "inner: 'ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト'"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/moviemodal/_moviemodal.ejs', {
+            title: 'モーダル起動',
+            movieID: 'EKrRCUr1VQk',
+          }) %>
+        </div>
+      </div>
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'tab',
+          txt: 'タブ切り替え',
+          componentPath: '/common/components/tab/_tab.ejs',
+          code: [
+            {property: "list: ["},
+            {property: "{name:'6列×1行タブ'}"},
+            {property: "{name:'6列×1行タブ'}"},
+            {property: "{name:'6列×1行タブ'}"},
+            {property: "{name:'6列×1行タブ'}"},
+            {property: "{name:'6列×1行タブ'}"},
+            {property: "{name:'6列×1行タブ'}"},
+            {property: "]"},
+            {property: "modifiers: []"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/tab/_tab.ejs', {
+            list: [
+              {name:'6列×1行タブ',},
+              {name:'6列×1行タブ'},
+              {name:'6列×1行タブ'},
+              {name:'6列×1行タブ'},
+              {name:'6列×1行タブ'},
+              {name:'6列×1行タブ'},
+            ],
+            modifiers: []
+          }) %>
+
+          <%# コンテンツは切り替えるタブの内容によって随時変更 %>
+
+          <div class="contents">
+            <div class="contents__item js-content is-active">
+              コンテンツ1
+            </div>
+            <div class="contents__item js-content">
+              コンテンツ2
+            </div>
+            <div class="contents__item js-content">
+              コンテンツ3
+            </div>
+            <div class="contents__item js-content">
+              コンテンツ4
+            </div>
+            <div class="contents__item js-content">
+              コンテンツ5
+            </div>
+            <div class="contents__item js-content">
+              コンテンツ6
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'panorama',
+          txt: 'パノラマ',
+          componentPath: '/common/components/panorama/_panorama.ejs',
+          code: [
+          {property: "imagePath:'./imgs/img-panorama.jpg'"},
+          {property: "alt:'現地眺望写真'"},
+          {property: "captionColor:''"},
+          {property: "captionPosition:'capOut'"},
+          {property: "figPosition: 'center'"},
+          {property: "modifiers: ['swipe']"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/panorama/_panorama.ejs', {
+            imagePath:'./imgs/img-panorama.jpg',
+            alt:'現地眺望写真',
+            captionColor:'',
+            captionPosition:'capOut',
+            figPosition: 'center',
+            modifiers: ['swipe']
+          }) %>
+        </div>
+
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'panorama(touchFigure)',
+          txt: '「touchfigure」を利用したパノラマ機能',
+          componentPath: '/common/components/touchfigure/_touchfigure.ejs',
+          code: [
+          {property: " imagePath:'./imgs/img-panorama.jpg'"},
+          {property: "alt:'現地眺望写真'"},
+          {property: "captionColor:'white'"},
+          {property: "captionPosition:'capIn'"},
+          {property: "frameMode: ''"},
+          {property: "figPosition: 'center'"},
+          {property: "modifiers: ['panorama']"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/touchfigure/_touchfigure.ejs', {
+            imagePath:'./imgs/img-panorama.jpg',
+            alt:'現地眺望写真',
+            captionColor:'white',
+            captionPosition:'capIn',
+            frameMode: '',
+            figPosition: 'center',
+            modifiers: ['panorama']
+          }) %>
+        </div>
+      </div>
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'loopslider',
+          txt: 'ループスライダー',
+          componentPath: '/common/components/loopslider/_loopslider.ejs',
+          code: [
+          {property: "imagePath:'./imgs/img-loop-dummy.jpg'"},
+          {property: "list: ["},
+          {property: "imgWidth: '2999'"},
+          {property: "imgHeight: '240'"},
+          {property: "imgHeightSP: '200'"},
+          {property: "speed: '50'"},
+          {property: "alt: 'ダミー'"},
+          {property: "modifiers: []"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+        </div>
+        <%- include('/common/components/loopslider/_loopslider.ejs', {
+          imagePath:'./imgs/img-loop-dummy.jpg',
+          imgWidth: '2999',
+          imgHeight: '240',
+          imgHeightSP: '200',
+          speed: '50',
+          alt: 'ダミー',
+          modifiers: []
+        }) %>
+      </div>
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'panzoom',
+          txt: 'panzoomによるピンチイン/ピンチアウト/パン機能',
+          componentPath: '/common/components/panzoom/_panzoom.ejs',
+          code: [
+          {property: "imagePath:'./imgs/img-map-01@1.5x.jpg'"},
+          {property: "width: '850px'"},
+          {property: "alt: ''"},
+          {property: "modifiers: []"},
+          ]
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/panzoom/_panzoom.ejs', {
+            imagePath:'./imgs/img-map-01@1.5x.jpg',
+            width: '850px',
+            alt: '',
+            modifiers: []
+          }) %>
+        </div>
+      </div>
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'slider (Swiper)',
+          txt: 'Swiperによるスライダー',
+          componentPath: '/common/components/slider/_slider.ejs',
+          code: []
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/slider/_slider.ejs', {
+            sliderList: [
+              { imagePathPC:'<img src="./imgs/pc/img-slider-01@1.5x.jpg" alt="" width="2160" height="1200">',
+                imagePathSP:'<img src="./imgs/sp/img-slider-01.jpg" alt="" width="750" height="1334">',
+                alt:'キャプション',
+                captionColor:'sdw-wh',
+                captionPosition:'capIn',
+                pictureMode:'on',
+                sai:'',
+                modifiers: []
+              },
+              { imagePathPC:'<img src="./imgs/pc/img-slider-02@1.5x.jpg" alt="" width="2160" height="1200">',
+                imagePathSP:'<img src="./imgs/sp/img-slider-02.jpg" alt="" width="750" height="1334">',
+                alt:'',
+                captionColor:'sdw-wh',
+                captionPosition:'capIn',
+                pictureMode:'on',
+                sai:'',
+                modifiers: []
+              },
+              { imagePathPC:'<img src="./imgs/pc/img-slider-03@1.5x.jpg" alt="" width="2160" height="1200">',
+                imagePathSP:'<img src="./imgs/sp/img-slider-03.jpg" alt="" width="750" height="1334">',
+                alt:'',
+                captionColor:'sdw-wh',
+                captionPosition:'capIn',
+                pictureMode:'on',
+                sai:'',
+                modifiers: []
+              },
+            ],
+          }) %>
+        </div>
+      </div>
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'Google Map',
+          txt: 'Google Map埋め込み',
+          componentPath: '/common/components/map/_map.ejs',
+          code: []
+        }) %>
+        <div class="demonstrateArea">
+          <%- include('/common/components/map/_map.ejs', {
+            id: 'map-01',
+          }) %>
+        </div>
+      </div>
+      <div id="photo" class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'photo',
+          txt: '画像の埋め込み<br><br>imgタグのwidth、heightの指定方法<br><br>（例）<br>&lt;%- include("/assets/components/photo/_photo_dim.ejs", {<br>&nbsp;&nbsp;imagePath:"&lt;img src="./imgs/img-01.jpg" alt="" width="720" height="480"&gt;",<br>&nbsp;&nbsp;alt:"ダミー",<br>&nbsp;&nbsp;captionColor:"sdw-wh",<br>&nbsp;&nbsp;captionPosition:"capIn",<br>&nbsp;&nbsp;pictureMode:"",<br>&nbsp;&nbsp;modifiers: []<br>}) %&gt;<br><br><br>lazyload追加にあたって付与するクラス<br><br>（例）<br>【lazysizes】<br>&lt;picture class="photo__pic"&gt;<br>&nbsp;&nbsp;&lt;source media="(min-width: 768px)" data-srcset="./imgs/pc/img-01.jpg" width="840" height="600"&gt;<br>&nbsp;&nbsp;&lt;img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7" data-src="./imgs/sp/img-01.jpg" alt="image photo" width="670" height="610" class="photo__image lazyload"&gt;<br>&lt;/picture&gt;<br><br>【yall】<br>&lt;div class="photo"&gt;<br>&nbsp;&nbsp;&lt;img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7" data-src="./imgs/img-01.jpg" alt="ダミー" width="720" height="480" class="photo__image lazy"&gt;<br>&nbsp;&nbsp;&lt;p class="photo__capIn capIn" data-color="sdw-wh"&gt;ダミー&lt;/p&gt;<br>&lt;/div&gt;',
+          componentPath: '/common/components/photo/_photo.ejs',
+          code: []
+        }) %>
+        <div class="demonstrateArea">
+          <%# include('/common/components/dummy/_dummy.ejs', {
+            txt: 'ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト',
+            alt: '',
+          }) %>
+        </div>
+      </div>
+
+      <div id="ytplayer" class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'ytplayer',
+          txt: 'YouTubeの動画埋め込み<br><br>（例） <br>&lt;%- include("/common/components/ytplayer/_ytplayer.ejs", { <br>&nbsp;&nbsp;youtubeID: "ynccI1WB300", <br>&nbsp;&nbsp;width: "1000", <br>&nbsp;&nbsp;height: "564", <br>&nbsp;&nbsp;autoplay: "true", <br>&nbsp;&nbsp;controls: "false", <br>&nbsp;&nbsp;fs: "false", <br>&nbsp;&nbsp;loop: "true", <br>&nbsp;&nbsp;rel: "false", <br>&nbsp;&nbsp;modifiers: [] <br>}) %&gt; <br><br>↓ build <br><br>&lt;div class="ytPlayerArea ytPlayerArea--noTouch js-yt-player" data-yt-id="ynccI1WB300" data-yt-width="1000" data-yt-height="564" data-yt-autoplay="true" data-yt-controls="false" data-yt-fs="false" data-yt-loop="true" data-yt-rel="false"&gt;<br>&nbsp;&nbsp;&lt;div class="ytPlayerFrame js-yt-frame"&gt;&lt;/div&gt;<br>&lt;/div&gt;<br><br>主なパラメータは以下になります。<br>autoplay ... 自動再生のON/OFF。<br>controls ... 動画プレイヤーのコントローラーの表示/非表示。<br>fs ... 全画面表示の可否。<br>loop ... 動画が終了した際のループ再生のON/OFF。<br>rel ... 動画終了後の関連動画を「同じチャンネルのものにするか」の選択ができます。',
+          componentPath: '/common/components/ytplayer/_ytplayer.ejs',
+          code: []
+        }) %>
+        <div class="demonstrateArea">
+          <%- include("/common/components/ytplayer/_ytplayer.ejs", {
+            youtubeID: "ynccI1WB300",
+            width: "1000",
+            height: "564",
+            autoplay: "true",
+            controls: "false",
+            fs: "false",
+            loop: "true",
+            rel: "false",
+            modifiers: []
+          }) %>
+        </div>
+      </div>
+
+
+      <%# 以下複製してコンポーネント追加してください %>
+      <div class="componentBlock">
+        <%- include('/common/development/manual/_manual.ejs', {
+          ttl: 'dummy',
+          txt: '',
+          componentPath: '/common/components/modal/_modal.ejs',
+          code: []
+        }) %>
+        <div class="demonstrateArea">
+          <%# include('/common/components/dummy/_dummy.ejs', {
+            txt: 'ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト',
+            alt: '',
+          }) %>
+        </div>
+      </div>
+      <%# 以下複製してコンポーネント追加してください %>
+
+
+
+
+      <%- include('/common/development/category/_category.ejs', {
+        ttl: 'Molucules',
+        txt: 'ダミーテキストです。正式な説明は追って記述します。Molecules（分子）は、Atoms を組み合わせて作る要素です。<br>この Atoms を組み合わせて Molecules を作るというのは「単一責任の原則」や UNIX 哲学の「1 つのプログラムは 1 つのことをうまくやる」に基づいているようです。'
+      }) %>
+
+
+
+
+
+
+    </div>
+  </div>
+</main>
+<%- include('/common/inc/footer/_footer.ejs', {pageId: pageData.pageDir, footerCap: ''}) %>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+.photo {
+  position: relative;
+
+  &__capIn,
+  &__capOut {
+    font-size: 10px;
+    line-height: calc(18 / 10);
+  }
+
+  &__capIn,
+  &__capOut {
+    position: absolute;
+  }
+
+  &__capIn {
+    bottom: 5px;
+    right: 5px;
+  }
+
+  &__capOut {
+    padding-top: 5px;
+    right: 0;
+    top: 100%;
+  }
+
+  &__pic {
+    display: block;
+  }
+
+  .relatedBox + & {
+    margin-top: 64px;
+  }
+
+  .heading + &,
+  .conversation + &,
+  .txt + &  {
+    @include pc {
+      margin-top: 56px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+  }
+
+  .subheading + & {
+    @include pc {
+      margin-top: 32px;
+    }
+
+    @include sp {
+      margin-top: 16px;
+    }
+  }
+
+}

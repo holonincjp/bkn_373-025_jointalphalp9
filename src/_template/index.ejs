@@ -1,0 +1,54 @@
+<% var pageData = {
+		pageDir: 'access',
+    topCVStatus: 'new'
+	};
+%>
+<%- include('/_head', {
+  pageId: pageData.pageDir,
+  title: 'indexのタイトル',
+  ogType: 'article',
+  vendorScript: false
+  }) %>
+<%- include('/common/inc/header/_header.ejs', {pageId: pageData.pageDir}) %>
+<main class="main">
+  <div class="container">
+    <div class="contentArea">
+      <div class="wrapCont">
+        <div class="uniqueCol01">
+          <div class="">
+            <img src="https://placehold.jp/1000x500.png" alt="" width="1000" height="500">
+          </div>
+          <div class="">
+            <img src="https://placehold.jp/1000x500.png" alt="" width="1000" height="500">
+          </div>
+          <div class="">
+            <img src="https://placehold.jp/1000x500.png" alt="" width="1000" height="500">
+          </div>
+          <div class="">
+            <img src="https://placehold.jp/1000x500.png" alt="" width="1000" height="500">
+          </div>
+          <div class="">
+            <img src="https://placehold.jp/1000x500.png" alt="" width="1000" height="500">
+          </div>
+          <div class="">
+            <img src="https://placehold.jp/1000x500.png" alt="" width="1000" height="500">
+          </div>
+        </div>
+        <div class="uniqueCol02">
+          <div class="">
+            <img src="https://placehold.jp/1000x500.png" alt="" width="1000" height="500">
+          </div>
+          <div class="">
+            <img src="https://placehold.jp/1000x500.png" alt="" width="1000" height="500">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<%- include('/common/inc/bottomarea/_bottomarea.ejs', {footerCap: '※注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。※注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。注釈が入ります。'}) %>
+<%- include('/common/inc/pagedirection/_pagedirection.ejs', {prevDir: 'map', prevTitle: '現地案内図', nextDir: 'concept', nextTitle: 'コンセプト'}) %>
+<%- include('/common/inc/footer/_footer.ejs', {pageId: pageData.pageDir, footerCap: ''}) %>
+</div>
+</body>
+</html>

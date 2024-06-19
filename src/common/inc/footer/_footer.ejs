@@ -1,0 +1,29 @@
+<% const module = incJson; %><%include('/_utils');
+
+const params = ejsUtils.defaultParamsMapper(locals, {
+  pageId: '',
+});
+
+%>
+<footer id="gFooter" class="footer">
+  <div class="footer__inner">
+    <div class="footer__head">
+      <img src="<%= relativePath %>common/imgs/logo.svg" alt="" class="footer-logo">
+      <div class="footer-detail">
+        <div class="footer-detail__ttl">運営会社</div>
+        <div class="footer-detail__list">
+          <div class="footer-detail__item">商号：穴吹興産株式会社</div>
+          <div class="footer-detail__item">許可番号：金融庁⾧官・国土交通大臣第124号</div>
+          <div class="footer-detail__item">許可種別：第1号事業、第2 号事業、第3号事業、第4号事業<br><span class="space">第1号、第2号、第4号において電子取引業務</span></div>
+          <div class="footer-detail__item">代表者：代表取締役 穴吹 忠嗣</div>
+          <div class="footer-detail__item">本社：香川県高松市鍛冶屋町 7-12</div>
+          <div class="footer-detail__item">TEL：0120-773-880</div>
+          <div class="footer-detail__item">業務管理者：岡田佳昭 不動産証券化協会認定マスター</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__cont">
+      <p class="footer-copyright">&copy;ジョイントアルファ［Jointo α］ All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>

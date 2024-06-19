@@ -1,0 +1,9 @@
+<%include('/_utils');
+const params = ejsUtils.defaultParamsMapper(locals, {
+  id:'',
+  modifiers: []
+});
+const className = ejsUtils.mapModifiers('map', params.modifiers);
+%>
+<div id="<%- params.id %>" class="<%- className %> js-map">
+</div>

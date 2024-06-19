@@ -1,0 +1,204 @@
+@import '../../common/css/variables/_variables';
+@import '../../common/css/mixins/_easing';
+@import '../../common/css/mixins/_mixins';
+@import '../components/**/*';
+
+.wrapCont {
+  margin: 0 auto;
+
+  @include min-screen($breakP) {
+    width: 1000px;
+  }
+}
+
+@mixin layoutCol (
+  /*----------------------------------------------------------------------
+  値一覧とデフォルト値
+  ----------------------------------------------------------------------*/
+  /* PCレウアウト時のカラム数 */
+  $pcCol: 2,
+  /* SPレウアウト時のカラム数 */
+  $spCol: 1,
+  /* boolean値 SP時カラムを中央表示にするか */
+  $spContCenter: false,
+  /* boolean値 PC時カラムを逆転するか */
+  $pcPosReverse: false,
+  /* boolean値 PC時カラムを縦中央にするか */
+  $pcAlignCenter: false,
+  /* boolean値 PC時カラムを中央表示にするか */
+  $pcContCenter: false,
+  /* コンテンツ幅 */
+  $contentWidth: 1000px,
+  /* SPの時のMarginTop */
+  $spMarginTop: 40px,
+  /* SP2カラムの時の幅 */
+  $sp2colWidth: 160px,
+  /* PCの時のMarginTop */
+  $pcMarginTop: 40px,
+  /* PCの子要素のデフォルト値 */
+  $pcColWidth: 0,
+  /* PC２カラムの時の幅 */
+  $pc2colWidth: 475px,
+  /* PC3カラムの時の幅 */
+  $pc3colWidth: 304px,
+  /* PC4カラムの時の幅 */
+  $pc4colWidth: 222px,
+  /* PC5カラムの時の幅 */
+  $pc5colWidth: 180px,
+  /* PC6カラムの時の幅 */
+  $pc6colWidth: 100px,
+) {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include sp {
+    @if $spCol == 1 {
+
+      > * {
+        width: 100%;
+
+        &:not(:first-child) {
+          margin-top: $spMarginTop;
+        }
+      }
+    }
+
+    @else if $spCol == 2 {
+      display: flex;
+      justify-content: space-between;
+
+      > * {
+        width: $sp2colWidth;
+
+        &:nth-child(n+3) {
+          margin-top: $spMarginTop;
+        }
+      }
+    }
+  }
+
+  @include pc {
+    @if $pcCol == 2 {
+      $pcColWidth:$pc2colWidth;
+    }
+
+    @else if $pcCol == 3 {
+      $pcColWidth:$pc3colWidth;
+    }
+
+    @else if $pcCol == 4 {
+      $pcColWidth:$pc4colWidth;
+    }
+
+    @else if $pcCol == 5 {
+      $pcColWidth:$pc5colWidth;
+    }
+
+    @else if $pcCol == 6 {
+      $pcColWidth:$pc6colWidth;
+    }
+
+    $ml: ($contentWidth - $pcColWidth * $pcCol) / ($pcCol - 1);
+
+    margin-left: $ml * -1;
+
+    > * {
+      margin-left: $ml;
+      width: $pcColWidth;
+
+      &:nth-child(n+#{$pcCol + 1}) {
+        margin-top: $pcMarginTop;
+      }
+    }
+  }
+
+  @if $pcPosReverse == true {
+    @include pc {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @if $pcAlignCenter == true {
+    @include pc {
+      align-items: center;
+    }
+  }
+
+  @if $pcContCenter == true {
+    @include pc {
+      justify-content: center;
+    }
+  }
+
+  @if $spContCenter == true {
+    @include sp {
+      justify-content: center;
+    }
+  }
+}
+
+@mixin differentLengthsCol (
+  /*----------------------------------------------------------------------
+  値一覧とデフォルト値
+  ----------------------------------------------------------------------*/
+  /* それぞれの長さ */
+  $pcWidthArr: (300px, 350px),
+   /* SPレウアウト時のカラム数 */
+  $spCol: 1,
+  /* boolean値 PC時カラムを逆転するか */
+  $pcPosReverse: false,
+  /* boolean値 PC時カラムを縦中央にするか */
+  $pcAlignCenter: false,
+  /* SPの時のMarginTop */
+  $spMarginTop: 40px,
+  /* SP2カラムの時の幅 */
+  $sp2colWidth: 160px,
+) {
+  @include sp {
+    @if $spCol == 1 {
+
+      > * {
+        width: 100%;
+
+        &:not(:first-child) {
+          margin-top: $spMarginTop;
+        }
+      }
+    }
+
+    @else if $spCol == 2 {
+      display: flex;
+      justify-content: space-between;
+
+      > * {
+        width: $sp2colWidth;
+
+        &:nth-child(n+3) {
+          margin-top: $spMarginTop;
+        }
+      }
+    }
+  }
+
+  @include pc {
+    display: flex;
+    justify-content: space-between;
+
+    @each $size in $pcWidthArr {
+      $i: index($pcWidthArr, $size);
+      > *:nth-child(#{$i}) {
+        width: $size;
+      }
+    }
+  }
+}
+
+.uniqueCol01 {
+  @include layoutCol($pcCol: 3, $spCol: 2);
+}
+
+.uniqueCol02 {
+  margin-top: 60px;
+
+  @include differentLengthsCol($pcWidthArr: (300px, 652px));
+}

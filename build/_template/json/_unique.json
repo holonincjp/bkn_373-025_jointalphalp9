@@ -1,0 +1,22 @@
+[
+  {
+    "id": "dummy01",
+    "imagePath": "./imgs/img-dummy-01.jpg",
+    "title": "ダミー01"
+  },
+  {
+    "id": "dummy02",
+    "imagePath": "./imgs/img-dummy-01.jpg",
+    "title": "ダミー02"
+  },
+  {
+    "id": "dummy03",
+    "imagePath": "./imgs/img-dummy-01.jpg",
+    "title": "ダミー03"
+  },
+  {
+    "id": "dummy04",
+    "imagePath": "./imgs/img-dummy-01.jpg",
+    "title": "ダミー04"
+  }
+]

@@ -1,0 +1,24 @@
+.demonstrateArea {
+    margin: 0 auto;
+
+    @include min-screen($breakP) {
+        width: 1000px;
+    }
+
+    @include max-screen($breakP) {
+        padding: 0 40px;
+    }
+
+    & + .category,
+    & + .manual {
+        margin-top: 150px;
+    }
+    
+    &--full {
+        width: 100vw;
+    }
+
+    & + & {
+        margin-top: 60px;
+    }
+}

@@ -1,0 +1,22 @@
+.damageWall {
+  margin: 0 auto;
+
+  @include pc {
+    width: 390px;
+  }
+
+  @include sp {
+    width: 280px;
+  }
+
+  & + .txt,
+  .txt + & {
+    @include pc {
+      margin-top: 56px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+  }
+}

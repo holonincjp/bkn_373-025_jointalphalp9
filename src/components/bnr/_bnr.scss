@@ -1,0 +1,87 @@
+.bnr {
+  align-items: center;
+  background: linear-gradient(to left, #f48733 0%, #f59f54 100%);
+  box-shadow: 0 2px 0 #cb7524;
+  color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  transition: .3s;
+  z-index: 3;
+
+  @include pc {
+    border-radius: 39.5px;
+    height: 79px;
+    width: 820px;
+  }
+
+  @include sp {
+    border-radius: 57px;
+    box-shadow: 0 2px 0 #cb7524;
+    height: 114px;
+    width: 100%;
+  }
+
+  @include hover {
+    background: linear-gradient(#f59f54 0%, #faaf6d 100%);
+  }
+
+
+  .arrowSVG {
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+
+    @include pc {
+      right: 40px;
+    }
+
+    @include sp {
+      right: 23px;
+    }
+  }
+
+  &__txt {
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+
+    @include pc {
+      font-size: 20px;
+
+      @include lhCrop(32/20);
+    }
+
+    @include sp {
+      font-size: 16px;
+
+      @include lhCrop(28/16);
+    }
+
+    .underline {
+      position: relative;
+
+      &:after {
+        background: #f4e67d;
+        bottom: -2px;
+        content: '';
+        height: 3px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+
+  .productArticle__leading + & {
+    @include pc {
+      margin-top: 24px;
+    }
+
+    @include sp {
+      margin-top: 24px;
+    }
+  }
+}

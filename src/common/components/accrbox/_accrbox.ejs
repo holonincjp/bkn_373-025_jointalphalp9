@@ -1,0 +1,5 @@
+<% include('/_utils'); const params = ejsUtils.defaultParamsMapper(locals, { txt: '' }); %>
+<div class="accrBox js-txt-accordion">
+  <p class="txt"><%- params.txt %></p>
+  <span class="accrBox__status"></span>
+</div>

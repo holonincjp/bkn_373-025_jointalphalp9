@@ -1,0 +1,136 @@
+<% var pageData = {
+		pageDir: 'top',
+    topCVStatus: 'new'
+	};
+%>
+<%- include('/_head', {
+  pageId: pageData.pageDir,
+  title: 'エリア分散型アルファアセットファンド第七弾（関東・関西・九州）|ジョイントアルファ [Jointo α]｜穴吹興産株式会社',
+  ogType: 'article',
+  vendorScript: false
+  }) %>
+<%- include('/common/inc/header/_header.ejs', {pageId: pageData.pageDir}) %>
+<main class="main">
+  <div class="container">
+    <div class="wrap">
+      <div id="mainVisual" class="mainVisual">
+        <picture class="mainVisual__pic">
+          <source media="(min-width: 768px)" srcset="./imgs/pc/img-mv@2x.png" width="1860" height="900">
+          <img src="./imgs/sp/img-mv@2x.png" alt="" width="737" height="1200" class="mainVisual__image">
+        </picture>
+
+        <%- include('./components/bnr/_bnr.ejs', {
+          linkPath: 'https://join-to.jp/investor/step1_entry.html',
+          txt: 'エリア分散型<br class="only-sp">アルファアセットファンド　第七弾　<br class="only-sp"><span class="underline">登録はこちら</span>'
+        }) %>
+        <%# <p class="caption">※1：シティタワー西梅田　※2：アールヴェール学芸大学<span class="only-pc">　※3：テキストダミー　※4：テキストダミー</span></p> %>
+      </div>
+      <div class="campaignBnr">
+        <%- include('/common/components/photo/_photo.ejs', {
+          imagePathPC: '<img src="./imgs/pc/bnr-campaign.png" alt="" width="1640" height="640">',
+          imagePathSP: '<img src="./imgs/sp/bnr-campaign.png" alt="" width="670" height="650">',
+          alt:'',
+          captionPosition:'noCap',
+          captionColor:'',
+          pictureMode:'on',
+          lazy:'on',
+          modifiers: []
+        }) %>
+        <p class="caption">【キャンペーン概要】・上記キャンペーンの対象条件を充足した方にAmazonギフト券をプレゼントします（Eメールでお届け）。※仮登録のみでは本キャンペーンの対象にはなりません。・商品はキャンペーン期間終了後、1ヶ月以内にメールにて電子ギフト受け取りフォームを送付致します。【注意事項】・受け取ったプレゼントは、課税対象になる場合があります。税に関する詳細は税務署ならびに税理士などの専門家にご確認下さい。・該当ファンドが成立しなかった場合、プレゼント対象外となります。・投資申込みをキャンセルされた場合、プレゼント対象外となります。・電子マネーギフトの受け取り有効期限は、メール送付から10年間となります。・プレゼントは1会員1回までとなります。同一の氏名、住所等での登録は重複と見なされます。・申請に不備がある場合は、投資家登録完了までにお時間がかかる可能性がございます。・本キャンペーンは予告なく終了させていただく場合がございます。あらかじめご了承ください。・本キャンペーンは穴吹興産（株）による提供です。本キャンペーンについてのお問い合わせはAmazonではお受けしておりません。穴吹興産（株）キャンペーン事務局info@join-to.jpまでお願いいたします。・Amazon、Amazon.co.jpおよびそれらのロゴはAmazon.com,Inc.またはその関連会社の商標です。・キャンペーン②は募集金額達成次第、終了となります。・キャンペーン②は投資金額ごとにいずれかの適用となります。</p>
+      </div>
+      <div class="recruitmentOutline">
+        <div class="recruitmentOutline__head">
+          <div class="recruitmentOutline__heading">
+            <svg width="39.999" height="9.999" viewBox="0 0 39.999 9.999"><g transform="translate(-651 -1303)"><g transform="translate(683 1303)"><path d="M3,9V6H1A1,1,0,1,1,1,4H3V1A1,1,0,0,1,5,1V4H7A1,1,0,1,1,7,6H5V9A1,1,0,0,1,3,9Z" fill="#f89e48"/></g><g transform="translate(667 1303)"><path d="M3,9V6H1A1,1,0,1,1,1,4H3V1A1,1,0,0,1,5,1V4H7A1,1,0,1,1,7,6H5V9A1,1,0,0,1,3,9Z" fill="#f89e48"/></g><g transform="translate(651 1303)"><path d="M3,9V6H1A1,1,0,1,1,1,4H3V1A1,1,0,0,1,5,1V4H7A1,1,0,1,1,7,6H5V9A1,1,0,0,1,3,9Z" fill="#f89e48"/></g></g></svg>
+            <span>募集概要</span>
+            <svg width="39.999" height="9.999" viewBox="0 0 39.999 9.999"><g transform="translate(-651 -1303)"><g transform="translate(683 1303)"><path d="M3,9V6H1A1,1,0,1,1,1,4H3V1A1,1,0,0,1,5,1V4H7A1,1,0,1,1,7,6H5V9A1,1,0,0,1,3,9Z" fill="#f89e48"/></g><g transform="translate(667 1303)"><path d="M3,9V6H1A1,1,0,1,1,1,4H3V1A1,1,0,0,1,5,1V4H7A1,1,0,1,1,7,6H5V9A1,1,0,0,1,3,9Z" fill="#f89e48"/></g><g transform="translate(651 1303)"><path d="M3,9V6H1A1,1,0,1,1,1,4H3V1A1,1,0,0,1,5,1V4H7A1,1,0,1,1,7,6H5V9A1,1,0,0,1,3,9Z" fill="#f89e48"/></g></g></svg>
+          </div>
+        </div>
+        <div class="recruitmentOutline__cont">
+          <dl class="recruitmentOutline__detail">
+            <dt class="recruitmentOutline__term">募集金額</dt>
+            <dd class="recruitmentOutline__desc">350,200,000円</dd>
+          </dl>
+          <dl class="recruitmentOutline__detail">
+            <dt class="recruitmentOutline__term">募集期間</dt>
+            <dd class="recruitmentOutline__desc">2024年4月15日〜<br class="only-sp">4月17日</dd>
+          </dl>
+          <dl class="recruitmentOutline__detail">
+            <dt class="recruitmentOutline__term">投資金額</dt>
+            <dd class="recruitmentOutline__desc">100,000円〜</dd>
+          </dl>
+          <dl class="recruitmentOutline__detail">
+            <dt class="recruitmentOutline__term">募集方法</dt>
+            <dd class="recruitmentOutline__desc">先着順</dd>
+          </dl>
+          <dl class="recruitmentOutline__detail tall">
+            <dt class="recruitmentOutline__term">出資上限額</dt>
+            <dd class="recruitmentOutline__desc">上限設定無し<p class="caption">※投資家保護の観点から、<br class="only-sp">ご登録の「金融資産額」以上の<br class="only-sp">投資には制限があります。</p></dd>
+          </dl>
+          <dl class="recruitmentOutline__detail">
+            <dt class="recruitmentOutline__term">運用期間</dt>
+            <dd class="recruitmentOutline__desc">2024年5月〜<br class="only-sp">2024年10月（6ヶ月）</dd>
+          </dl>
+          <dl class="recruitmentOutline__detail">
+            <dt class="recruitmentOutline__term">配当日</dt>
+            <dd class="recruitmentOutline__desc">2024年11月</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="conversation">
+        <div class="conversation__person conversation__person--woman">
+          <img src="./imgs/icon-woman@1.5x.png" class="conversation__icon" alt="">
+          <div class="conversation__balloon">
+            <p class="txt">初めて検討するのですが、エリア分散型アルファアセットファンドはどのような投資商品なのでしょうか？</p>
+          </div>
+        </div>
+        <div class="conversation__person conversation__person--man">
+          <img src="./imgs/icon-man@1.5x.png" class="conversation__icon" alt="">
+          <div class="conversation__balloon">
+            <p class="txt">「エリア分散型」区分マンションクラウドファンディングについて、詳しく商品解説をさせて頂きます。</p>
+          </div>
+        </div>
+      </div>
+      <div class="contentsTable">
+        <div class="contentsTable__head">
+          <div class="contentsTable__heading">
+            <svg width="39.999" height="9.999" viewBox="0 0 39.999 9.999"><g transform="translate(-651 -1303)"><g transform="translate(683 1303)"><path d="M3,9V6H1A1,1,0,1,1,1,4H3V1A1,1,0,0,1,5,1V4H7A1,1,0,1,1,7,6H5V9A1,1,0,0,1,3,9Z" fill="#ffffff"/></g><g transform="translate(667 1303)"><path d="M3,9V6H1A1,1,0,1,1,1,4H3V1A1,1,0,0,1,5,1V4H7A1,1,0,1,1,7,6H5V9A1,1,0,0,1,3,9Z" fill="#ffffff"/></g><g transform="translate(651 1303)"><path d="M3,9V6H1A1,1,0,1,1,1,4H3V1A1,1,0,0,1,5,1V4H7A1,1,0,1,1,7,6H5V9A1,1,0,0,1,3,9Z" fill="#ffffff"/></g></g></svg>
+            <span>もくじ</span>
+            <svg width="39.999" height="9.999" viewBox="0 0 39.999 9.999"><g transform="translate(-651 -1303)"><g transform="translate(683 1303)"><path d="M3,9V6H1A1,1,0,1,1,1,4H3V1A1,1,0,0,1,5,1V4H7A1,1,0,1,1,7,6H5V9A1,1,0,0,1,3,9Z" fill="#ffffff"/></g><g transform="translate(667 1303)"><path d="M3,9V6H1A1,1,0,1,1,1,4H3V1A1,1,0,0,1,5,1V4H7A1,1,0,1,1,7,6H5V9A1,1,0,0,1,3,9Z" fill="#ffffff"/></g><g transform="translate(651 1303)"><path d="M3,9V6H1A1,1,0,1,1,1,4H3V1A1,1,0,0,1,5,1V4H7A1,1,0,1,1,7,6H5V9A1,1,0,0,1,3,9Z" fill="#ffffff"/></g></g></svg>
+          </div>
+        </div>
+        <div class="contentsTable__cont">
+          <ul class="contentsTable__list">
+            <li class="contentsTable__item"><a href="#ancArticle01" class="contentsTable__link">エリア分散型アルファアセットファンドとは…</a></li>
+            <li class="contentsTable__item"><a href="#ancArticle02" class="contentsTable__link">東証スタンダード上場の穴吹興産株式会社が共同事業主</a></li>
+            <li class="contentsTable__item"><a href="#ancArticle03" class="contentsTable__link">エリア分散型アルファアセットファンド３つのポイント</a></li>
+            <li class="contentsTable__item"><a href="#ancArticle04" class="contentsTable__link">エリア分散型アルファアセットファンド品４つの特徴</a></li>
+            <li class="contentsTable__item"><a href="#ancArticle05" class="contentsTable__link">元本割れ実績「０件」</a></li>
+            <li class="contentsTable__item"><a href="#ancArticle06" class="contentsTable__link">収益性よりも安定性を重視</a></li>
+            <li class="contentsTable__item"><a href="#ancArticle07" class="contentsTable__link">具体例</a></li>
+            <li class="contentsTable__item"><a href="#ancArticle08" class="contentsTable__link">不動産クラウドファンディングを活用された方のご意見</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <%- include('./components/productArticle/_01.ejs') %>
+      <%- include('./components/productArticle/_02.ejs') %>
+      <%- include('./components/productArticle/_03.ejs') %>
+      <%- include('./components/productArticle/_04.ejs') %>
+      <%- include('./components/productArticle/_05.ejs') %>
+      <%- include('./components/productArticle/_06.ejs') %>
+      <%- include('./components/productArticle/_07.ejs') %>
+      <%- include('./components/productArticle/_08.ejs') %>
+
+
+    </div>
+    <a href="#top" class="topBack">
+      <svg class="arrowSVG" width="64" height="66" viewBox="0 0 64 66"><defs><filter x="0" y="0" width="64" height="66" filterUnits="userSpaceOnUse"><feOffset dy="2" input="SourceAlpha"/><feGaussianBlur result="blur"/><feFlood flood-color="#96b4d6"/><feComposite operator="in" in2="blur"/><feComposite in="SourceGraphic"/></filter></defs><g transform="translate(-1303 -27319)"><g transform="matrix(1, 0, 0, 1, 1303, 27319)" filter="url(#楕円形_118)"><circle cx="32" cy="32" r="32" fill="#fff"/></g><path d="M0,8V0H8" transform="translate(1335.343 27348.523) rotate(45)" fill="none" stroke="#3068ad" stroke-width="2"/></g></svg>
+    </a>
+
+  </div>
+</main>
+<%- include('/common/inc/footer/_footer.ejs', {pageId: pageData.pageDir, footerCap: ''}) %>
+</div>
+</body>
+</html>

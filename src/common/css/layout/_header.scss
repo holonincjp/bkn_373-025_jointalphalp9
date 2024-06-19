@@ -1,0 +1,36 @@
+.header {
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  @include pc {
+    height: 79px;
+    margin-bottom: 40px;
+  }
+
+  @include sp {
+    height: 62px;
+    margin-bottom: 24px;
+  }
+
+  &:before {
+    background-color: #2969b1;
+    content: '';
+    height: 8px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.header-logo {
+  @include pc {
+    width: 186px;
+  }
+
+  @include sp {
+    width: 160px;
+  }
+}

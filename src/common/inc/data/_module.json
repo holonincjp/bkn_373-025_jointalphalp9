@@ -1,0 +1,32 @@
+{
+	"nav_set": {
+		"top": {
+			"new": true,
+			"off": false
+		},
+		"concept": {
+			"new": false,
+			"off": false
+		},
+		"location": {
+			"new": false,
+			"off": false
+		},
+		"plan": {
+			"new": false,
+			"off": false
+		},
+		"design": {
+			"new": false,
+			"off": false
+		},
+		"access": {
+			"new": false,
+			"off": false
+		},
+		"equipment": {
+			"new": false,
+			"off": false
+		}
+	}
+}

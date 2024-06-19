@@ -1,0 +1,15 @@
+<%
+include('/_utils');
+
+const params = ejsUtils.defaultParamsMapper(locals, {
+  pageId: '',
+  footerCap: '',
+});
+
+%>
+<div class="bottomArea">
+  <div class="bottomArea__inner">
+    <% if (params.footerCap != '') { %><p class="caption"><%- params.footerCap %></p><% } %>
+    
+  </div>
+</div>

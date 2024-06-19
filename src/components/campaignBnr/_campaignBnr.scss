@@ -1,0 +1,35 @@
+.campaignBnr {
+  margin: 0 auto;
+
+  @include pc {
+    width: 820px;
+  }
+
+  @include sp {
+    width: 100%;
+  }
+
+  .caption {
+    margin-top: 10px;
+  }
+
+  .mainVisual + & {
+    @include pc {
+      margin-top: 140px;
+    }
+
+    @include sp {
+      margin-top: 146px;
+    }
+  }
+
+  & + .recruitmentOutline {
+    @include pc {
+      margin-top: 80px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+  }
+}

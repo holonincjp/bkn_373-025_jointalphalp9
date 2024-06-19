@@ -1,0 +1,190 @@
+.touchFigure {
+  position: relative;
+
+  @include max-screen($breakP) {
+    margin: 0 -40px;
+    width: 100vw;
+  }
+
+  & + & {
+    margin-top: 30px;
+  }
+
+  &__capIn,
+  &__capOut {
+    position: absolute;
+  }
+
+  &__capIn {
+    bottom: 5px;
+    right: 5px;
+  }
+
+  &__capOut {
+    padding-top: 5px;
+    right: 10px;
+    top: 100%;
+  }
+
+  &__spIcon {
+    left: 20px;
+    position: absolute;
+    top: 20px;
+
+    @include min-screen($breakP) {
+      display: none;
+    }
+
+    .zoomSVG {
+      height: auto;
+      width: 28.5px;
+
+      &__path,
+      &__polygon {
+        fill: #999999;
+      }
+    }
+
+    .swipeSVG {
+      height: auto;
+      width: 28.5px;
+
+      &__path,
+      &__polygon {
+        fill: #999999;
+      }
+    }
+
+    .moveSVG {
+      height: auto;
+      width: 28px;
+
+      &__path,
+      &__polygon {
+        fill: #999999;
+      }
+    }
+  }
+
+  &--swipe {
+    @include max-screen($breakP) {
+      height: 60vh;
+    }
+
+    .touchFigure {
+
+      &__inner {
+        @include max-screen($breakP) {
+          height: 100%;
+          overflow: scroll;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+
+      &__image {
+        @include max-screen($breakP) {
+          height: 100%;
+          max-width: unset;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  &--panorama {
+    @include max-screen($breakP) {
+      height: 80vh;
+    }
+
+    .touchFigure {
+
+      &__inner {
+        height: 100%;
+        overflow: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      &__image {
+        height: 100%;
+        max-width: unset;
+        pointer-events: none;
+        width: auto;
+      }
+
+      &__capIn {
+        pointer-events: none;
+      }
+    }
+
+    .panoramaController {
+      align-items: center;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      left: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 100%;
+      z-index: 1;
+
+      @include min-screen($breakP) {
+        padding: 0 60px;
+      }
+
+      @include max-screen($breakP) {
+        margin: 0 -10px;
+        width: calc(100vw + 20px);
+      }
+
+      &__btn {
+        pointer-events: auto;
+
+        @include min-screen($breakP) {
+          cursor: pointer;
+          width: 113px;
+        }
+
+        @include max-screen($breakP) {
+          width: calc(106vw / 750 * 100);
+        }
+
+        .arrowSVG {
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &--move {
+
+    .touchFigure {
+
+      &__inner {
+        @include max-screen($breakP) {
+          height: 100vw;
+          overflow: scroll;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+
+      &__image {
+        @include max-screen($breakP) {
+          max-width: unset;
+          width: auto;
+        }
+      }
+    }
+  }
+}

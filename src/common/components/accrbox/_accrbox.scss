@@ -1,0 +1,60 @@
+.accrBox {
+  position: relative;
+
+  @include max-screen($breakP) {
+    max-height: 56px;
+    overflow: hidden;
+    padding-right: 45px;
+    transition: 1.2s;
+
+    &.is-open {
+      max-height: 1000px;
+
+      .accrBox__status {
+
+        &:before {
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        &:after {
+          transform: translate(-50%, -50%) scale(1, 0) rotate(90deg);
+        }
+      }
+    }
+  }
+
+  &__status {
+    background-color: rgba(0, 0, 0, .3);
+    bottom: 0;
+    height: 22px;
+    position: absolute;
+    right: 0;
+    transition: 1.2s;
+    width: 22px;
+
+    &:before,
+    &:after {
+      background-color: #ffffff;
+      content: '';
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: .3s;
+    }
+
+    &:before {
+      height: 15px;
+      width: 1px;
+    }
+
+    &:after {
+      height: 1px;
+      width: 15px;
+    }
+
+    @include min-screen($breakP) {
+      display: none;
+    }
+  }
+}

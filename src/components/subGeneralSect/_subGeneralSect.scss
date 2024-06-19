@@ -1,0 +1,33 @@
+.subGeneralSect {
+
+  & + .subGeneralSect {
+    @include pc {
+      margin-top: 64px;
+    }
+
+    @include sp {
+      margin-top: 32px;
+    }
+  }
+
+  .conversation + &,
+  .txt + & {
+    @include pc {
+      margin-top: 56px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+  }
+
+  .heading + & {
+    @include pc {
+      margin-top: 56px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+  }
+}

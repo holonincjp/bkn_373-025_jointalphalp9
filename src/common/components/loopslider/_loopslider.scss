@@ -1,0 +1,44 @@
+@keyframes slideAnim {
+
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.loopSlider{
+  overflow: hidden;
+  width: 100%;
+
+
+  &__inner{
+    animation: slideAnim 20s linear infinite;
+    height: auto;
+    width: 100%;
+  }
+
+  &__item{
+    align-items: flex-start;
+    display: flex;
+    width: 100%;
+
+    &.only-pc{
+      @include max-screen($breakP) {
+        display: none !important;
+      }
+    }
+
+    &.only-sp{
+      @include min-screen($breakP) {
+        display: none !important;
+      }
+    }
+  }
+
+  &__image{
+    height: 100%;
+  }
+}

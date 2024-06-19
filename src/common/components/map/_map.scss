@@ -1,0 +1,11 @@
+.map {
+  width: 100%;
+
+  @include max-screen($breakP) {
+    height: 300px;
+  }
+
+  @include min-screen($breakP) {
+    height: 600px;
+  }
+}

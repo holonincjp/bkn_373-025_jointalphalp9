@@ -1,0 +1,30 @@
+<%include('/_utils');
+const params = ejsUtils.defaultParamsMapper(locals, {
+  imagePath:'',
+  width: '',
+  alt: '',
+  modifiers: []
+});
+const className = ejsUtils.mapModifiers('zoomFigure', params.modifiers);
+
+%>
+
+<div class="<%- className %>">
+  <div class="zoomFigure__inner js-panzoom">    
+    <%- include('/common/components/photo/_photo.ejs', {
+      imagePath: '<img src="' + params.imagePath + '">',
+      alt: params.alt,
+      captionColor:'black',
+      lazy:'off',
+      modifiers: []
+    }) %>
+  </div>
+  <div class="zoomFigure__controller">
+    <div class="zoomFigure__btn js-panzoom-in">
+      <svg class="btnSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80px" height="80px" viewBox="0,0,80,80"><path class="btnSVG__path" fill-rule="evenodd"  opacity="0.6" fill="rgb(0, 0, 0)" d="M-0.000,-0.000 L80.000,-0.000 L80.000,79.999 L-0.000,79.999 L-0.000,-0.000 Z"/><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M61.000,42.000 L42.000,42.000 L42.000,61.000 L39.000,61.000 L39.000,42.000 L20.000,42.000 L20.000,39.000 L39.000,39.000 L39.000,20.000 L42.000,20.000 L42.000,39.000 L61.000,39.000 L61.000,42.000 Z"/></svg>
+    </div>
+    <div class="zoomFigure__btn js-panzoom-out">
+      <svg class="btnSVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80px" height="80px" viewBox="0,0,80,80"><path class="btnSVG__path" fill-rule="evenodd"  opacity="0.6" fill="rgb(0, 0, 0)" d="M-0.000,-0.000 L80.000,-0.000 L80.000,79.999 L-0.000,79.999 L-0.000,-0.000 Z"/><path fill-rule="evenodd"  fill="rgb(255, 255, 255)" d="M20.000,39.000 L61.000,39.000 L61.000,42.000 L20.000,42.000 L20.000,39.000 Z"/></svg>        
+    </div>
+  </div>
+</div>

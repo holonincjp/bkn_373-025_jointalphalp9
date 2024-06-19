@@ -1,0 +1,89 @@
+.manual {
+    & + .manual {
+      margin-top: 150px;
+    }
+    & + .demonstrateArea {
+      margin-top: 100px;
+    }
+
+    &__head {
+        align-items: center;
+        background-color: #000000;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 30px 20px;
+        & + .manual__content {
+            margin-top: 30px;
+
+        }
+    }
+
+    &__ttl {
+        color: #ffffff;
+        font-size: 30px;
+
+    }
+
+    &__content {
+        margin: 0 auto;
+
+        @include min-screen($breakP) {
+            width: 1000px;
+        }
+    }
+
+    &__componentPath {
+        background-color: #cccccc;
+        border: 1px solid #666666;
+        border-radius: 3px;
+        margin-top: 10px;
+        padding: 30px;
+    }
+
+    .sourceArea {
+        background-color: #eeeeee;
+        border: 1px solid #333333;
+        border-radius: 3px;
+        display: block;
+        font-size: 12px;
+        margin-top: 30px;
+        padding: 80px 50px;
+        position: relative;
+
+        .clipButton {
+            align-items: center;
+            background-color: #ffffff;
+            border: 1px solid #333333;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            height: 50px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            transition: .3s;
+            width: 100px;
+            &__txt {
+              font-size: 16px;
+              line-height: .7;
+              letter-spacing: 0;
+              margin-left: 5px;
+            }
+            svg {
+              width: 18px;
+            }
+            @include min-screen($breakP) {
+              &:hover {
+                opacity: .4;
+              }
+            }
+        }
+    }
+
+    &__txt {
+        font-family: $font-default-gothic;
+        font-size: 16px;
+
+    }
+}

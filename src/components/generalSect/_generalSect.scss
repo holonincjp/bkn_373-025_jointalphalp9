@@ -1,0 +1,28 @@
+.generalSect {
+  position: relative;
+
+  &:before {
+    background-color: #ebebeb;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  & + .generalSect {
+    @include pc {
+      margin-top: 80px;
+      padding-top: 80px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+      padding-top: 40px;
+    }
+
+    &:before {
+      content: '';
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<% const module = incJson; %><%
+include('/_utils');
+
+const params = ejsUtils.defaultParamsMapper(locals, {
+  pageId: '',
+  themeColor: 'white'
+});
+%>
+<header id="gHeader" class="header">
+  <img src="<%= relativePath %>common/imgs/logo.svg" width="186" height="34" class="header-logo" alt="jointo a">
+</header>

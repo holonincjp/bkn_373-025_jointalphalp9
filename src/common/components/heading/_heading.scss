@@ -1,0 +1,28 @@
+.heading {
+  color: #333333;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: calc(32 / 22);
+  position: relative;
+  text-align: left;
+
+  @include pc {
+    padding-left: 20px;
+  }
+
+  @include sp {
+    padding-left: 10px;
+  }
+
+
+  &:before {
+    background: #6996c8;
+    content: '';
+    height: 22px;
+    left: 0;
+    position: absolute;
+    top: 6px;
+    width: 4px;
+  }
+
+}

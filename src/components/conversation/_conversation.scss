@@ -1,0 +1,146 @@
+.conversation {
+  margin: 0 auto;
+
+  @include pc {
+    width: 820px;
+  }
+
+
+  &__person {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+
+    @include pc {
+      width: 690px;
+    }
+
+    & + .conversation__person {
+      @include pc {
+        margin-top: 56px;
+      }
+
+      @include sp {
+        margin-top: 40px;
+      }
+    }
+
+    &--woman {
+      flex-direction: row-reverse;
+      margin: 0 0 0 auto;
+
+      .conversation__balloon:after {
+        border-color: transparent transparent transparent #ffffff;
+        border-style: solid;
+        border-width: 8px 0 8px 13.9px;
+        content: '';
+        height: 0;
+        left: 100%;
+        width: 0;
+      }
+    }
+
+    &--man {
+
+      .conversation__balloon:after {
+        border-color: transparent #ffffff transparent transparent;
+        border-style: solid;
+        border-width: 8px 13.9px 8px 0;
+        content: '';
+        height: 0;
+        right: 100%;
+        width: 0;
+
+      }
+    }
+  }
+
+  &__balloon {
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
+
+    @include pc {
+      padding: 36px 40px;
+      width: 560px;
+    }
+
+    @include sp {
+      padding: 24px;
+      width: 260px;
+    }
+
+    &:after {
+      position: absolute;
+
+      @include pc {
+        top: 36px;
+      }
+
+      @include sp {
+        top: 28px;
+      }
+    }
+
+    .txt {
+      color: #333333;
+
+      & + .caption {
+        @include pc {
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+
+
+  &__icon {
+    height: auto;
+
+    @include pc {
+      margin-top: 8px;
+      width: 80px;
+    }
+
+    @include sp {
+      width: 56px;
+    }
+  }
+
+  .recruitmentOutline + & {
+    @include pc {
+      margin-top: 80px;
+    }
+
+    @include sp {
+      margin-top: 60px;
+    }
+  }
+
+  .txt + &,
+  .photo + & {
+    @include pc {
+      margin-top: 80px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+  }
+
+  .heading + &,
+  .relatedBox + & {
+    @include pc {
+      margin-top: 56px;
+    }
+
+    @include sp {
+      margin-top: 40px;
+    }
+
+  }
+}

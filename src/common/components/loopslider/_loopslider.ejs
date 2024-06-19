@@ -1,0 +1,28 @@
+<%include('/_utils');
+const params = ejsUtils.defaultParamsMapper(locals, {
+  imagePath:'',
+  imgWidth: '',
+  imgHeight: '',
+  imgHeightSP: '',
+  speed: '',
+  alt: '',
+  modifiers: []
+});
+const className = ejsUtils.mapModifiers('loopSlider', params.modifiers);
+
+%>
+
+<div class="<%- className %> js-loopslider">
+  <div class="loopSlider__inner" <%- 'style="animation-duration:' + params.speed + 's"'%>>
+    <div class="loopSlider__item<% if (params.imgHeightSP !== '') { %> only-pc<% } %>" <%- 'style="height:' + params.imgHeight + 'px"'%>>
+      <img src="<%- params.imagePath %>" alt="<%- params.alt %>" class="loopSlider__image">
+      <img src="<%- params.imagePath %>" alt="<%- params.alt %>" class="loopSlider__image">
+    </div>
+    <% if (params.imgHeightSP !== '') { %>
+      <div class="loopSlider__item only-sp" <%- 'style="height:' + params.imgHeightSP + 'px"'%>>
+        <img src="<%- params.imagePath %>" alt="<%- params.alt %>" class="loopSlider__image">
+        <img src="<%- params.imagePath %>" alt="<%- params.alt %>" class="loopSlider__image">
+      </div>
+    <% } %>
+  </div>
+</div>
